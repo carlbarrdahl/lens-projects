@@ -1,0 +1,23 @@
+query Challenge($request: ChallengeRequest!) {
+  challenge(request: $request) {
+    text
+  }
+}
+
+mutation Authentication($request: SignedAuthChallenge!) {
+  authenticate(request: $request) {
+    accessToken
+    refreshToken
+  }
+}
+
+mutation Refresh($request: RefreshRequest!) {
+  refresh(request: $request) {
+    accessToken
+    refreshToken
+  }
+}
+
+query Verify($request: VerifyRequest!) {
+  verify(request: $request)
+}
