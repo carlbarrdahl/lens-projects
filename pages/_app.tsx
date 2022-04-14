@@ -23,7 +23,7 @@ const connectors = ({ chainId }) => {
 
 const theme = extendTheme({
   config: {
-    initialColorMode: "light",
+    initialColorMode: "dark",
   },
   styles: {
     global: {
@@ -41,7 +41,8 @@ const theme = extendTheme({
         button: {
           borderRadius: "full",
           border: "1px solid",
-          borderColor: "gray.100",
+          borderColor: (p) =>
+            p.colorMode === "dark" ? "gray.800" : "gray.100",
         },
       },
     },
